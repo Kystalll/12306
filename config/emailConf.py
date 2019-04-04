@@ -1,6 +1,5 @@
 # -*- coding: utf8 -*-
 import socket
-
 __author__ = 'MR.wen'
 from email.header import Header
 from email.mime.text import MIMEText
@@ -18,12 +17,12 @@ def sendEmail(msg):
     is_email = email_conf["email_conf"]["is_email"]
     if is_email:
         try:
-            sender = email_conf["email_conf"]["email"]
-            receiver = email_conf["email_conf"]["notice_email_list"]
+            sender = '450694263@qq.com'
+            receiver = 'sunshijie@chinacfsc.com'
             subject = '恭喜，您已订票成功'
-            username = email_conf["email_conf"]["username"]
-            password = email_conf["email_conf"]["password"]
-            host = email_conf["email_conf"]["host"]
+            username = sender
+            password = 'fridaxuwrkmscafi'
+            host = "smtp.qq.com"
             s = "{0}".format(msg)
 
             msg = MIMEText(s, 'plain', 'utf-8')  # 中文需参数‘utf-8’，单字节字符不需要
@@ -32,15 +31,17 @@ def sendEmail(msg):
             msg['To'] = receiver
 
             try:
-                smtp = smtplib.SMTP_SSL()
-                smtp.connect(host)
+                smtp = smtplib.SMTP_SSL(host)
+                smtp.connect(host, 465)
             except socket.error:
-                smtp = smtplib.SMTP()
-                smtp.connect(host)
-            smtp.connect(host)
+                smtp = smtplib.SMTP(host)
+                smtp.connect(host, 465)
+            smtp.connect(host, 465)
             smtp.login(username, password)
             smtp.sendmail(sender, receiver.split(","), msg.as_string())
             smtp.quit()
+
+
             print(u"邮件已通知, 请查收")
         except Exception as e:
             print(u"邮件配置有误{}".format(e))

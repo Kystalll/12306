@@ -17,6 +17,6 @@ def PushbearConf():
 
 
 if __name__ == '__main__':
-    run()
-    # Email()
-    # PushbearConf()
+    # run()
+    Email()
+    PushbearConf()
