@@ -25,6 +25,14 @@ def sendEmail(msg):
             host = "smtp.qq.com"
             s = "{0}".format(msg)
 
+            # sender = email_conf["email_conf"]["email"]
+            # receiver = email_conf["email_conf"]["notice_email_list"]
+            # subject = '恭喜，您已订票成功'
+            # username = email_conf["email_conf"]["username"]
+            # password = email_conf["email_conf"]["password"]
+            # host = email_conf["email_conf"]["host"]
+
+
             msg = MIMEText(s, 'plain', 'utf-8')  # 中文需参数‘utf-8’，单字节字符不需要
             msg['Subject'] = Header(subject, 'utf-8')
             msg['From'] = sender

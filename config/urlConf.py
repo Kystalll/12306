@@ -402,7 +402,7 @@ urls = {
         "req_type": "post",
         "Referer": "",
         "Content-Type": 1,
-        "Host": "pushbear.ftqq.com",
+        "Host": "sc.ftqq.com",
         "re_try": 10,
         "re_time": 0.01,
         "s_time": 0.1,

@@ -98,7 +98,7 @@ auto_code_account:
 email_conf:
   is_email: True
   email: "450694263@qq.com"
-  notice_email_list: "sunshijie0101@gmail.com"
+  notice_email_list: "sunshijie@chinacfsc.com"
   username: "450694263@qq.com"
   password: "fridaxuwrkmscafi"
   host: "smtp.qq.com"

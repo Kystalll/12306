@@ -5,7 +5,7 @@ import os
 import re
 import sys
 import csv
-import requests
+# import requests
 from config import urlConf
 
 try:
